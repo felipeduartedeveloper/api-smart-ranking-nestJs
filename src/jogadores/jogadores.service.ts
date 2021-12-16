@@ -8,7 +8,6 @@ export class JogadoresService {
   private jogadores: Jogador[] = [];
   private readonly logger = new Logger(JogadoresService.name);
   async criarAtualizarJogador(criaJogadorDto: CriarJogadorDto): Promise<void> {
-    this.logger.log(`criaJogadorDto: ${criaJogadorDto}`);
     await this.criar(criaJogadorDto);
   }
   private criar(criaJogadorDto: CriarJogadorDto): void {
@@ -23,6 +22,7 @@ export class JogadoresService {
       posicaoRanking: 1,
       urlFotoJogador: 'www.google.com.br/foto123.jpg',
     };
+    this.logger.log(`criaJogadorDto: ${JSON.stringify(jogador)}`);
     this.jogadores.push(jogador);
   }
 }

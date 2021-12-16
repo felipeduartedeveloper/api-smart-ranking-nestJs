@@ -8,9 +8,6 @@ export class JogadoresController {
 
   @Post()
   async criarAtualizarJogador(@Body() criarJogadorDto: CriarJogadorDto) {
-    const { email } = criarJogadorDto;
-    return JSON.stringify(`{
-      email: ${email}
-    }`);
+    await this.jogadoresService.criarAtualizarJogador(criarJogadorDto);
   }
 }
